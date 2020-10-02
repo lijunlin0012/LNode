@@ -1,6 +1,7 @@
 ﻿
 #include <iostream>
 using namespace std;
+#define N 100
 typedef struct LNode {
 	int data;
 	struct LNode* next;
@@ -23,10 +24,13 @@ Status ListDelete_L(LinkList& L, int i, ElemType& e) {
 */
 void createlist(LinkList& L) {
     
-   for(int i=0;i<5;i++) {
+   for(int i=0;i<N;i++) {
         LNode* p = new Node; //生成新结点 
         cin >> p->data; //输入元素值
         //cout << p->data;
+        if (p->data == -1) {
+            break;
+        }
        
         p->next = L->next; L->next = p; 	//插入到表头 
     } 
@@ -35,11 +39,12 @@ void deleteSameNum(LinkList& L) {
     LNode* p2 = L->next;
     LNode* q;
     while (p2->next) {
-        if (p2->data == p2->next->data)
+     
+        if (p2->data== p2->next->data)
         {
             q = p2->next;
             p2->next = q->next;
-            p2 = p2->next;
+          //  p2 = p2->next;
         }
         else {
             p2 = p2->next;
