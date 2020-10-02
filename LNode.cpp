@@ -23,7 +23,7 @@ Status ListDelete_L(LinkList& L, int i, ElemType& e) {
 }//ListDelete_L 
 */
 void createlist(LinkList& L) {
-    
+    LNode *r = L;
    for(int i=0;i<N;i++) {
         LNode* p = new Node; //生成新结点 
         cin >> p->data; //输入元素值
@@ -32,7 +32,9 @@ void createlist(LinkList& L) {
             break;
         }
        
-        p->next = L->next; L->next = p; 	//插入到表头 
+        p->next = NULL;	//插入到表尾
+        r->next = p;
+        r = p;
     } 
 }
 void deleteSameNum(LinkList& L) {
