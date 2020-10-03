@@ -21,5 +21,8 @@
     <ClCompile Include="DuLNode.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="删除直接前驱节点.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

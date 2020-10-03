@@ -7,7 +7,7 @@ typedef struct LNode {
 	struct LNode* next;
 }Node, * LinkList;
 
-//CreateList_F 
+
 /*
 Status ListDelete_L(LinkList& L, int i, ElemType& e) {
     p = L; j = 0;
