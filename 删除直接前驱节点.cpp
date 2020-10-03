@@ -1,4 +1,6 @@
-
+/*函数void deletePriorLNode(LinkList& p)为所需代码
+ 其他代码均供测试使用
+*/
 #include <iostream>
 using namespace std;
 #define N 100
@@ -7,27 +9,11 @@ typedef struct LNode {
     struct LNode* next;
 }Node, * LinkList;
 
-
-/*
-Status ListDelete_L(LinkList& L, int i, ElemType& e) {
-    p = L; j = 0;
-    while (p->next && j < i - 1) {//寻找第i个结点，并令p指向其前驱
-        p = p->next; ++j;
-    }
-    if (!(p->next) || j > i - 1) return ERROR; //删除位置不合理
-    q = p->next; //临时保存被删结点的地址以备释放
-    p->next = q->next; 	//改变删除结点前驱结点的指针域
-    e = q->data; 	//保存删除结点的数据域
-    delete q; 	//释放删除结点的空间
-    return OK;
-}//ListDelete_L
-*/
 void createlist(LinkList& L) {
     LNode* r = L;
     for (int i = 0; i < N; i++) {
         LNode* p = new Node; //生成新结点 
         cin >> p->data; //输入元素值
-        //cout << p->data;
         if (p->data == -1) {
 
             break;
@@ -38,7 +24,7 @@ void createlist(LinkList& L) {
         r = p;
     }
     r->next = L->next;
-}
+}//生成循环链表 r->next = L->next;
 LNode* GetElem_L(LinkList& L, int i) {
     LNode* p = L->next;
     int j = 1; //初始化
@@ -49,15 +35,15 @@ LNode* GetElem_L(LinkList& L, int i) {
     return p;
 }
 
-void deletePriorLNode(LinkList& p) {
+void deletePriorLNode(LNode *p) {
     LNode* p1 = p->next;
-    LNode* q=p;
+    LNode* q=p;//q始终指向p1的前一个节点
     while (p1 ->next!= p) {
         q = p1;
         p1 = p1->next;
-    }
+    }//当p1->next发现链表全部循环了一遍后，p1指向前驱节点，q指向前驱节点的前一个节点
     q->next = p;
-    delete p1;
+    delete p1;//释放前驱节点的内存
 }
 void showList(LinkList& L) {
     cout << "now the list is" << endl;
@@ -77,7 +63,10 @@ int main() {
     L->next = NULL; //先建立一个带头结点的单链表
     createlist(L);
     showList(L);
-    LNode *p=GetElem_L(L, 3);
+    int testNum;
+    cout << "你想删除第几个元素的前驱节点？" << endl;
+    cin >> testNum;
+    LNode *p=GetElem_L(L, testNum);
    deletePriorLNode(p);
    showList(L);
 }
