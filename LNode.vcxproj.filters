@@ -18,5 +18,8 @@
     <ClCompile Include="LNode.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="DuLNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
