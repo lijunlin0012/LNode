@@ -1,5 +1,6 @@
 /*函数void deletePriorLNode(LinkList& p)为所需代码
  其他代码均供测试使用
+ 默认表的所有元素为整数
 */
 #include <iostream>
 using namespace std;
@@ -28,10 +29,12 @@ void createlist(LinkList& L) {
 LNode* GetElem_L(LinkList& L, int i) {
     LNode* p = L->next;
     int j = 1; //初始化
-    while (p && j < i) {	//向后扫描，直到p指向第i个元素或p为空
+    while (p && j < i) {
         p = p->next; ++j;
     }
-    if (!p || j > i)return NULL; //第i个元素不存在 
+    if (!p || j > i) { 
+        cout << "查找的元素不存在" << endl;
+        return NULL; }//第i个元素不存在 
     return p;
 }
 
@@ -50,12 +53,12 @@ void showList(LinkList& L) {
     LNode* p1 = L->next;
     cout << p1->data << endl;
     while (p1->next) {
-        if (p1 -> next == L->next) {
+        if (p1->next == L->next) {
             break;
         }
         p1 = p1->next;
-        cout << p1->data << endl;
-    }
+        cout << p1->data;
+    }cout << endl;
 }
 
 int main() {
