@@ -32,8 +32,12 @@ LNode* GetElem_L(LinkList& L, int x) {
 }
 
 void mergeNode(LNode *p,LinkList &L1) {
-    //LNode* q = p->next;
+    LNode* q = p->next;
     p->next = L1->next;
+    while (p->next) {	
+        p = p->next;
+    }
+    p->next = q;
 }
 void showList(LinkList& L) {
    

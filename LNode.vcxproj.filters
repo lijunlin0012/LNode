@@ -15,16 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LNode.cpp">
+    <ClCompile Include="1_LNode.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="DuLNode.cpp">
+    <ClCompile Include="2_DuLNode.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="删除直接前驱节点.cpp">
+    <ClCompile Include="3_删除直接前驱节点.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="以元素x为界的两表合并.cpp">
+    <ClCompile Include="4_以元素x为界的两表合并.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
