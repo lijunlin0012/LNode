@@ -1,6 +1,7 @@
-/*函数void mergeNode(LNode *p,LinkList &L1)为所需代码
+/*函数void mergeNode(LinkList &L,LinkList &L1)为所需代码
  其他代码均供测试使用
  默认表的所有元素为整数
+ 代码写得有点sb请轻拍，应该用L3定义一个新指针的，没有哪个sb会直接用L来操作
 */
 #include <iostream>
 using namespace std;
@@ -37,7 +38,7 @@ void showList(LinkList& L) {
     cout << endl;
 }
 
-void mergeNode(LinkList& L, LinkList& L1) {
+void mergeNode(LinkList L, LinkList L1) {
     LNode* p0 = L->next->next;
     LNode* p1 = L1->next;
     LNode* temp;
