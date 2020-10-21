@@ -1,7 +1,6 @@
-﻿/* 函数void insertList(LinkList& L,int val,int position)为所需代码
+﻿/* 函数int deletePoint(LinkList& L, int position)为所需代码
 其他代码均供测试使用
 默认表的所有元素为整数
-插入到第position个元素之前
 
 已创建好的链表中删除一个元素：
 从键盘读入欲删除的元素位置（序号），
