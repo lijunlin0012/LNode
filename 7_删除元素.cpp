@@ -55,7 +55,7 @@ void showList(LinkList& L) {
 }
 
 int main() {
-    int position, val;
+    int position;
     LNode* L = new LNode;
     L->next = NULL; //先建立一个带头结点的单链表
     cout << "请输入链表的元素，以-1结尾" << endl;
