@@ -40,7 +40,7 @@ int deletePoint(LinkList& L, int position) {
         return -1;
     }
     p->next =p->next->next;
-    cout << "succeed!" << endl;
+    cout << "Delete succeed!" << endl;
     return 0;
 }
 

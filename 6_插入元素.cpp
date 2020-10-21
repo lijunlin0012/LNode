@@ -45,7 +45,7 @@ int insertList(LinkList& L,int val,int position) {
     s->data = val;      		           //将结点s的数据域置为val 
     s->next = p->next;	   	          //将结点s插入L中 
     p->next = s;
-    cout << "succeed!" << endl;
+    cout << "Insert succeed!" << endl;
     return 0;
 }//在第i个元素之前插入
 
