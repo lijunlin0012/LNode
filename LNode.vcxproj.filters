@@ -27,7 +27,10 @@
     <ClCompile Include="4_以元素x为界的两表合并.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="合并链表.cpp">
+    <ClCompile Include="5_合并链表.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="6_插入元素.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
