@@ -3,9 +3,9 @@
 默认表的所有元素为整数
 插入到第position个元素之前
 
-在已创建好的链表中插入一个元素：
-从键盘读入元素值和插入位置
-调用插入函数完成插入操作。
+已创建好的链表中删除一个元素：
+从键盘读入欲删除的元素位置（序号），
+调用删除函数完成删除操作。
 然后将链表元素依次输出到屏幕上。
 */
 #include <iostream>
@@ -32,22 +32,18 @@ void createlist(LinkList& L) {
         r = p;
     }
 }
-int insertList(LinkList& L,int val,int position) {
-    LNode* p;
-    p= L; 
+int deletePoint(LinkList& L, int position) {
+    LNode* p=L;
     int j = 0;
-    while (p && j < position-1) { p = p->next; ++j; }	//寻找第i−1个结点 
+    while (p && j < position - 1) { p = p->next; ++j; }	//寻找第i−1个结点 
     if (!p || j > position - 1) {
-        cout << "插入的位置大于表长或小于1"<<endl;
+        cout << "删除的位置大于表长或小于1，删除失败" << endl;//i大于表长 + 1或者小于1  
         return -1;
-    }//i大于表长 + 1或者小于1  
-    LNode *s = new LNode;			//生成新结点s 
-    s->data = val;      		           //将结点s的数据域置为val 
-    s->next = p->next;	   	          //将结点s插入L中 
-    p->next = s;
+    }
+    p->next =p->next->next;
     cout << "succeed!" << endl;
     return 0;
-}//在第i个元素之前插入
+}
 
 void showList(LinkList& L) {
     cout << "now the list is" << endl;
@@ -60,16 +56,14 @@ void showList(LinkList& L) {
 }
 
 int main() {
-    int position,val;
+    int position, val;
     LNode* L = new LNode;
     L->next = NULL; //先建立一个带头结点的单链表
     cout << "请输入链表的元素，以-1结尾" << endl;
     createlist(L);
     showList(L);
-    cout << "请输入要插入的元素值" << endl;
-    cin >> val;
-    cout << "请输入要插入的位置" << endl;
+    cout << "请输入要删除元素的位置" << endl;
     cin >> position;
-    insertList(L, val, position);
+    deletePoint(L, position);
     showList(L);
 }
