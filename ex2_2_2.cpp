@@ -1,4 +1,4 @@
-﻿/* 函数void deleteOrInsret(LinkList& L, int val);为所需代码
+﻿/* 函数void deleteOrInsert(LinkList& L, int val);为所需代码
 其他代码均供测试使用
 默认表的所有元素为整数
 
@@ -20,7 +20,7 @@ typedef struct LNode {
     struct LNode* next;
 }Node, * LinkList;
 
-void deleteOrInsret(LinkList& L, int val);
+void deleteOrInsert(LinkList& L, int val);
 int insertList(LinkList& L, int val);
 int deletePoint(LinkList& L, int position);
 void createlist(LinkList& L) {
@@ -37,7 +37,7 @@ void createlist(LinkList& L) {
         r = p;
     }
 }
-void deleteOrInsret(LinkList& L, int val) {
+void deleteOrInsert(LinkList& L, int val) {
     LNode* p = L->next;
     int j = 1;
     int flag = 0;//flag:调用过deletePoint的次数
@@ -96,6 +96,6 @@ int main() {
     cout << "请输入一个整数" << endl;
     int val;
     cin >> val;
-    deleteOrInsret(L, val);
+    deleteOrInsert(L, val);
     showList(L);
 }
