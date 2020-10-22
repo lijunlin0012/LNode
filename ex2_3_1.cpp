@@ -1,4 +1,4 @@
-/*函数void deleteSameNum(LinkList& L)为所需代码
+/*函数void deleteNegativeNum(LinkList& L)为所需代码
  其他代码均供测试使用
  默认表的所有元素为整数
 */
