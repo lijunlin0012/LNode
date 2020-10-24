@@ -16,7 +16,6 @@ void createlist(LinkList& L) {
    for(int i=0;i<N;i++) {
         LNode* p = new Node; //生成新结点 
         cin >> p->data; //输入元素值
-      
         if (p->data == -1) {
             break;
         }
